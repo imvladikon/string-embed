@@ -46,23 +46,27 @@ def readlines(file):
     return [line.decode("utf8", "ignore") for line in lines]
 
 
-def word2sig(lines, max_length=None):
+def word2sig(lines, max_length=None, alphabet=None):
     """
     :param file: the path to the file
     :return: 2-dimensional numpy array, of which each row denotes one string's one-hot coding
     """
 
     lens = [len(line) for line in lines]
-    if max_length is None:
+    if max_length is None or max_length==0:
         max_length = np.max(lens)
-        if max_length % 2 != 0:
-            max_length += 1
-    elif max_length < np.max(lens):
+    if max_length % 2 != 0:
+        max_length += 1
+    if max_length < np.max(lens):
         warnings.warn("K is {} while strings may " "exceed the maximum length {}".format(max_length, np.max(lens)))
+    if alphabet is None or not alphabet:
+        all_chars = dict()
+        all_chars["counter"] = 0
+        alphabet = ''
+    else:
+        all_chars = {c:idx for idx, c in enumerate(alphabet)}
+        all_chars["counter"] = len(all_chars)
 
-    all_chars = dict()
-    all_chars["counter"] = 0
-    alphabet = ''
 
     def to_ord(c):
         nonlocal all_chars

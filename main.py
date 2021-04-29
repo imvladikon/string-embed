@@ -46,7 +46,7 @@ class DataHandler:
         self.nb = self.ni - self.nq - self.nt
 
         start_time = time.time()
-        self.C, self.M, self.char_ids, self.alphabet = word2sig(self.lines, max_length=None)
+        self.C, self.M, self.char_ids, self.alphabet = word2sig(self.lines, max_length=self.maxl, alphabet = args.alphabet)
         print("# Loading time: {}".format(time.time() - start_time))
 
         self.load_ids()
@@ -240,6 +240,7 @@ def get_args():
     parser.add_argument(
         "--no-cuda", action="store_true", default=False, help="disables GPU training"
     )
+    parser.add_argument("--alphabet", type=str, default=None, help="alphabet")
     args = parser.parse_args()
     data_file = "model/{}/{}/{}/nt{}_nq{}{}".format(
         args.shuffle_seed,

@@ -6,7 +6,7 @@ POOL = nn.AvgPool1d
 
 
 class TwoLayerPool(nn.Module):
-    def __init__(self, C, M, embedding, mtc_input):
+    def __init__(self, C, M, embedding, mtc_input, *args, **kwargs):
         super(TwoLayerPool, self).__init__()
         self.C = C
         self.M = M
@@ -30,7 +30,7 @@ class TwoLayerPool(nn.Module):
 
 
 class MultiLayerCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(MultiLayerCNN, self).__init__()
         self.C = C
         self.M = M
@@ -80,7 +80,7 @@ class MultiLayerCNN(nn.Module):
 
 
 class RandomCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(RandomCNN, self).__init__()
         self.C = C
         self.M = M
@@ -127,7 +127,7 @@ class RandomCNN(nn.Module):
 
 
 class EnronCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(EnronCNN, self).__init__()
         self.C = C
         self.M = M
@@ -174,7 +174,7 @@ class EnronCNN(nn.Module):
 
 
 class TrecCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(TrecCNN, self).__init__()
         self.C = C
         self.M = M
@@ -221,7 +221,7 @@ class TrecCNN(nn.Module):
 
 
 class UnirefCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(UnirefCNN, self).__init__()
         self.C = C
         self.M = M
@@ -281,7 +281,7 @@ class UnirefCNN(nn.Module):
 
 
 class DBLPCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(DBLPCNN, self).__init__()
         self.C = C
         self.M = M
@@ -328,7 +328,7 @@ class DBLPCNN(nn.Module):
 
 
 class QuerylogCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(QuerylogCNN, self).__init__()
         self.C = C
         self.M = M
@@ -370,7 +370,7 @@ class QuerylogCNN(nn.Module):
 
 
 class TwoLayerCNN(nn.Module):
-    def __init__(self, C, M, embedding, channel, mtc_input):
+    def __init__(self, C, M, embedding, channel, mtc_input, *args, **kwargs):
         super(TwoLayerCNN, self).__init__()
         self.C = C
         self.M = M
