@@ -240,7 +240,7 @@ def get_args():
     parser.add_argument(
         "--no-cuda", action="store_true", default=False, help="disables GPU training"
     )
-    parser.add_argument("--alphabet", type=str, default=None, help="alphabet")
+    parser.add_argument("--alphabet", type=str, default=string.ascii_letters + string.punctuation + string.digits + " ", help="alphabet")
     args = parser.parse_args()
     data_file = "model/{}/{}/{}/nt{}_nq{}{}".format(
         args.shuffle_seed,
